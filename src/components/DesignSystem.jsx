@@ -1,6 +1,9 @@
 const DesignSystem = () => {
   return (
-    <div className="design-cont wrapper bg-dark text-white flow-big">
+    <div
+      className="design-cont wrapper bg-dark text-white flow-big"
+      style={{ maxWidth: '1000px' }}
+    >
       {/*--- COLORS  ---*/}
       <section className="flow">
         <h2 className="design-title ">
