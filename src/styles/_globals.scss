@@ -452,7 +452,7 @@ button[data-nav-toggle='true'] {
   .logo::after {
     position: absolute;
     content: '';
-    height: 4px;
+    height: 2px;
     width: calc(100vw - 950px);
     background-color: rgba($clr-white, 0.2);
     backdrop-filter: blur(10px);
