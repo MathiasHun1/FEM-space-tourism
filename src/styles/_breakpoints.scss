@@ -1,0 +1,32 @@
+// device size
+$breakpoint-small: 45rem;
+$breakpoint-large: 70rem;
+
+@mixin small-above {
+  @media (min-width: $breakpoint-small) {
+    @content;
+  }
+}
+@mixin small-under {
+  @media (max-width: $breakpoint-small) {
+    @content;
+  }
+}
+
+@mixin large-above {
+  @media (min-width: $breakpoint-large) {
+    @content;
+  }
+}
+
+@mixin large-under {
+  @media (max-width: $breakpoint-large) {
+    @content;
+  }
+}
+
+@mixin medium-size {
+  @media (min-width: $breakpoint-small) and (max-width: $breakpoint-large) {
+    @content;
+  }
+}

@@ -1,0 +1,53 @@
+@use './abstractions' as *;
+@use './breakpoints' as media;
+
+* {
+  font-weight: inherit;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  font-weight: 300;
+}
+
+.app {
+  min-height: 100%;
+  grid-template-rows: min-content 1fr;
+  background-image: url('/images/home/background-home-mobile.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right 0% bottom 0%;
+  overflow: hidden;
+}
+
+.main {
+}
+
+.primary-header {
+  height: min-content;
+  padding-block: 2rem;
+  justify-content: space-between;
+  position: relative;
+}
+
+@include media.small-above {
+  .app {
+    background-image: url('/images/home/background-home-tablet.jpg');
+  }
+}
+
+@include media.large-above {
+  .app {
+    background-image: url('/images/home/background-home-desktop.jpg');
+  }
+}

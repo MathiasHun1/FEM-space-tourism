@@ -1,0 +1,58 @@
+@use './abstractions' as *;
+
+.design-cont {
+  min-height: 100%;
+  padding-bottom: 12rem;
+}
+
+.design-cont > * {
+  border-bottom: 2px solid rgba($clr-white, 0.2);
+  padding-bottom: 2rem;
+}
+
+.design-colors {
+  & > * {
+    text-transform: uppercase;
+    border: 1px solid $clr-light;
+    min-width: 200px;
+    width: 100%;
+    aspect-ratio: 2 / 1;
+    padding: 1rem;
+    display: grid;
+    justify-items: start;
+    align-items: end;
+    margin-bottom: 2rem;
+  }
+}
+
+.typo-title {
+  color: $clr-light;
+  font-weight: 500;
+}
+
+.design-title {
+  font-family: $ff-sans-condensed;
+  font-size: var(--fs-500);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+
+  & > span {
+    color: rgba($clr-white, 0.25);
+    margin-right: 1rem;
+  }
+}
+
+.design-components {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  column-gap: 2rem;
+  row-gap: 5rem;
+
+  & > * {
+    display: flex;
+    flex-basis: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+}
