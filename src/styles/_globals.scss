@@ -166,7 +166,7 @@
 
 .text-preset-6 {
   font-family: $ff-serif;
-  font-size: var(--fs-500);
+  font-size: calc(28rem / 16);
   letter-spacing: 0px;
 }
 
@@ -196,7 +196,7 @@
 
 /*----- Component classes -----*/
 
-.numbered-title a {
+.header-title a {
   font-family: $ff-sans-condensed;
   font-size: var(--fs-300);
   text-transform: uppercase;
@@ -208,6 +208,16 @@
     color: $clr-white;
     margin-right: 1rem;
     font-weight: 700;
+  }
+}
+
+.numbered-title {
+  color: $clr-white;
+
+  & > span {
+    font-weight: 500;
+    color: rgba($clr-white, 0.5);
+    margin-right: 0.5rem;
   }
 }
 
@@ -265,8 +275,11 @@ button[data-nav-toggle='true'] {
 }
 
 .underline-indicators > * {
-  border-bottom: none;
-  padding-block: var(--underline-gap, 0);
+  border: none;
+  padding: 0;
+  height: min-content;
+  background-color: transparent;
+  padding-block: var(--underline-gap, 1rem);
 
   & > a {
     text-decoration: none;
@@ -277,11 +290,11 @@ button[data-nav-toggle='true'] {
 .underline-indicators > *:hover,
 .underline-indicators > *:focus {
   cursor: pointer;
-  border-right: 3px solid rgba($clr-white, 0.5);
+  border-bottom: 3px solid rgba($clr-white, 0.5);
 }
 
 .underline-indicators > *.active {
-  border-right: 3px solid $clr-white;
+  border-bottom: 3px solid $clr-white;
 }
 
 .dot-indicator {
@@ -298,6 +311,11 @@ button[data-nav-toggle='true'] {
 
 .dot-indicator.active {
   background-color: $clr-white;
+}
+
+.tablist {
+  justify-content: space-evenly;
+  gap: var(--gap, 1rem);
 }
 
 .grid-container {
@@ -357,18 +375,6 @@ button[data-nav-toggle='true'] {
 
 /*--- medium screen + ---*/
 @include media.small-above {
-  .underline-indicators > *:hover,
-  .underline-indicators > *:focus {
-    cursor: pointer;
-    border-right: none;
-    border-bottom: 3px solid rgba($clr-white, 0.5);
-  }
-
-  .underline-indicators > *.active {
-    border-right: none;
-    border-bottom: 3px solid $clr-white;
-  }
-
   .mobile-nav-toggle {
     display: none;
   }
@@ -380,9 +386,6 @@ button[data-nav-toggle='true'] {
 
 /*----- large screen -----*/
 @include media.large-above {
-  .underline-indicators > * {
-  }
-
   .dot-indicator {
     width: 1rem;
   }

@@ -23,7 +23,6 @@ body {
 .app {
   min-height: 100%;
   grid-template-rows: min-content 1fr;
-  background-image: url('/images/home/background-home-mobile.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: right 0% bottom 0%;
@@ -70,10 +69,6 @@ body {
 }
 
 @include media.small-above {
-  .app {
-    background-image: url('/images/home/background-home-tablet.jpg');
-  }
-
   .primary-nav {
     position: revert;
     flex-direction: row;
@@ -108,7 +103,7 @@ body {
 }
 
 @include media.large-above {
-  .app {
+  .home {
     background-image: url('/images/home/background-home-desktop.jpg');
   }
 

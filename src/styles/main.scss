@@ -1,10 +1,7 @@
-// @use './reset' as *;
-// @use './designPage' as *;
-// @use './globals' as *;
-// @use './abstractions' as *;
-
 @forward './reset';
 @forward './designPage';
 @forward './globals';
 @forward './abstractions';
 @forward './app';
+@forward './page';
+@forward './layout';

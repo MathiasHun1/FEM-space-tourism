@@ -1,0 +1,97 @@
+@use './abstractions' as *;
+@use './breakpoints' as media;
+
+// Layout specific rules
+
+.grid-container {
+  display: grid;
+  height: 100%;
+  place-items: center;
+  text-align: center;
+  padding-bottom: max(5rem, 15vh);
+}
+
+.grid-container > * {
+  max-width: 60ch;
+  height: min-content;
+}
+
+// Home
+.grid-container--home {
+  align-items: end;
+}
+
+// Desttination
+
+.grid-container--destination {
+  grid-template-areas:
+    'title'
+    'image'
+    'tabs'
+    'content';
+}
+
+.grid-container--destination > img {
+  max-width: 60%;
+}
+
+.destination-meta {
+  flex-direction: column;
+  gap: 2rem;
+  border-top: 1px solid rgba($clr-white, 0.1);
+  padding-top: 2rem;
+}
+
+.grid-container--destination > h2 {
+  grid-area: title;
+}
+
+.grid-container--destination > img {
+  grid-area: image;
+}
+
+.grid-container--destination > .tablist {
+  grid-area: tabs;
+}
+
+.grid-container--destination > .destination-info {
+  grid-area: content;
+}
+
+@include media.small-above {
+  .destination-meta {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+}
+
+@include media.large-above {
+  .grid-container--destination {
+    grid-template-areas:
+      '. title title .'
+      '. image tabs .'
+      '. image content .';
+
+    column-gap: 5rem;
+    text-align: start;
+  }
+
+  .grid-container--destination > img {
+    justify-self: right;
+    align-self: end;
+    max-width: 100%;
+  }
+
+  .grid-container--destination > .tablist {
+    justify-self: left;
+  }
+
+  .grid-container--destination > .destination-info {
+    justify-self: left;
+  }
+
+  .destination-meta {
+    justify-content: start;
+    gap: 5rem;
+  }
+}

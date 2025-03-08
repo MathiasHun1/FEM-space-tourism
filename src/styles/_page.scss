@@ -1,0 +1,29 @@
+@use './breakpoints' as media;
+
+.home {
+  background-image: url('/images/home/background-home-mobile.jpg');
+}
+
+.destination {
+  background-image: url('/images/destination/background-destination-mobile.jpg');
+}
+
+@include media.small-above {
+  .home {
+    background-image: url('/images/home/background-home-tablet.jpg');
+  }
+
+  .destination {
+    background-image: url('/images/destination/background-destination-tablet.jpg');
+  }
+}
+
+@include media.large-above {
+  .home {
+    background-image: url('/images/home/background-home-desktop.jpg');
+  }
+
+  .destination {
+    background-image: url('/images/destination/background-destination-desktop.jpg');
+  }
+}

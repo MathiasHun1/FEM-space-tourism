@@ -9,7 +9,7 @@ const Navigation = ({ menuOpened }) => {
         data-nav-visible={menuOpened}
         aria-expanded={menuOpened}
       >
-        <li className="numbered-title">
+        <li className="header-title">
           <NavLink
             to="/home"
             className={({ isActive }) => (isActive ? ' active' : '')}
@@ -19,7 +19,7 @@ const Navigation = ({ menuOpened }) => {
           </NavLink>
         </li>
 
-        <li className="numbered-title">
+        <li className="header-title">
           <NavLink
             to="/destination"
             className={({ isActive }) => (isActive ? ' active' : '')}
@@ -29,7 +29,7 @@ const Navigation = ({ menuOpened }) => {
           </NavLink>
         </li>
 
-        <li className="numbered-title">
+        <li className="header-title">
           <NavLink
             to="/crew"
             className={({ isActive }) => (isActive ? ' active' : '')}
@@ -39,7 +39,7 @@ const Navigation = ({ menuOpened }) => {
           </NavLink>
         </li>
 
-        <li className="numbered-title">
+        <li className="header-title">
           <NavLink
             to="/technology"
             className={({ isActive }) => (isActive ? 'active' : '')}
