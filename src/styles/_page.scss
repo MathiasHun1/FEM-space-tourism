@@ -8,6 +8,10 @@
   background-image: url('/images/destination/background-destination-mobile.jpg');
 }
 
+.crew {
+  background-image: url('/images/crew/background-crew-mobile.jpg');
+}
+
 @include media.small-above {
   .home {
     background-image: url('/images/home/background-home-tablet.jpg');
@@ -15,6 +19,10 @@
 
   .destination {
     background-image: url('/images/destination/background-destination-tablet.jpg');
+  }
+
+  .crew {
+    background-image: url('/images/crew/background-crew-tablet.jpg');
   }
 }
 
@@ -25,5 +33,9 @@
 
   .destination {
     background-image: url('/images/destination/background-destination-desktop.jpg');
+  }
+
+  .crew {
+    background-image: url('/images/crew/background-crew-desktop.jpg');
   }
 }

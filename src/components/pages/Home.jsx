@@ -1,4 +1,4 @@
-import React from 'react';
+import { NavLink } from 'react-router';
 
 const Home = () => {
   return (
@@ -16,9 +16,12 @@ const Home = () => {
         </p>
       </div>
       <div>
-        <a className="button-big text-preset-4 text-dark" href="">
+        <NavLink
+          to={'/destination'}
+          className="button-big text-preset-4 text-dark"
+        >
           Explore
-        </a>
+        </NavLink>
       </div>
     </div>
   );

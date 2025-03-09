@@ -3,13 +3,12 @@ import { Routes, Route, Navigate, useLocation } from 'react-router';
 import logoSVG from '/images/shared/logo.svg';
 
 import Navigation from './components/Navigation';
-import Home from './components/Home';
-import Destination from './components/Destination';
+import Home from './components/pages/Home';
+import Destination from './components/pages/Destination';
+import Crew from './components/pages/Crew';
 
 const App = () => {
   const location = useLocation().pathname.slice(1);
-
-  useEffect(() => {}, [location]);
 
   const [menuOpened, setMenuOpened] = useState(false);
 
@@ -40,7 +39,7 @@ const App = () => {
         <Routes>
           <Route path="/home" element={<Home />} />
           <Route path="/destination" element={<Destination />} />
-          <Route path="/crew" element={<div>crew</div>} />
+          <Route path="/crew" element={<Crew />} />
           <Route path="/technology" element={<div>technology</div>} />
 
           <Route path="*" element={<Navigate to="/home" replace />} />

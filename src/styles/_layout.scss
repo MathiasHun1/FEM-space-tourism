@@ -24,15 +24,12 @@
 // Desttination
 
 .grid-container--destination {
+  grid-template-rows: 3rem 3fr 2fr;
   grid-template-areas:
     'title'
     'image'
     'tabs'
     'content';
-}
-
-.grid-container--destination > img {
-  max-width: 60%;
 }
 
 .destination-meta {
@@ -48,6 +45,7 @@
 
 .grid-container--destination > img {
   grid-area: image;
+  max-width: 50%;
 }
 
 .grid-container--destination > .tablist {
@@ -58,15 +56,67 @@
   grid-area: content;
 }
 
+// Crew
+
+.grid-container--crew {
+  grid-template-rows: 3rem 15rem 5rem;
+  grid-template-areas:
+    'title'
+    'content'
+    'tabs'
+    'image';
+}
+
+.grid-container--crew h2 {
+  opacity: 0.5;
+}
+
+.grid-container--crew h1 {
+  grid-area: title;
+}
+
+.grid-container--crew > .crew-image-wrapper {
+  margin-top: 2rem;
+  width: 60%;
+  grid-area: image;
+  align-self: start;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    background: linear-gradient(to top, $clr-dark 10%, rgba(#fff, 0) 30%);
+    z-index: 100;
+  }
+}
+
+.grid-container--crew > article {
+  grid-area: content;
+}
+
+.grid-container--crew > .pagination-small {
+  grid-area: tabs;
+}
+
 @include media.small-above {
   .destination-meta {
     flex-direction: row;
     justify-content: space-evenly;
   }
+
+  .grid-container--destination > img {
+    grid-area: image;
+  }
 }
 
 @include media.large-above {
   .grid-container--destination {
+    grid-template-rows: 6rem 10rem;
     grid-template-areas:
       '. title title .'
       '. image tabs .'
@@ -76,22 +126,74 @@
     text-align: start;
   }
 
+  .grid-container--destination > h1 {
+    justify-self: left;
+  }
+
   .grid-container--destination > img {
     justify-self: right;
-    align-self: end;
-    max-width: 100%;
+    align-self: center;
+    max-width: revert;
+    width: 90%;
   }
 
   .grid-container--destination > .tablist {
     justify-self: left;
+    align-self: end;
   }
 
   .grid-container--destination > .destination-info {
     justify-self: left;
+    align-self: start;
+    padding: 0;
   }
 
   .destination-meta {
     justify-content: start;
     gap: 5rem;
+  }
+
+  .grid-container--crew {
+    grid-template-rows: 6rem;
+    grid-template-areas:
+      '. title title .'
+      '. content image .'
+      '. tabs image .';
+    column-gap: 5rem;
+    padding-bottom: 5rem;
+    text-align: left;
+  }
+
+  .grid-container--crew > * {
+    grid-template-areas:
+      '. title title .'
+      '. content image .'
+      '. tabs image .';
+
+    text-align: left;
+    max-width: revert;
+  }
+
+  .grid-container--crew > .crew-image-wrapper {
+    justify-self: left;
+    align-self: flex-end;
+    width: 600px;
+    height: 700px;
+    position: relative;
+    display: block;
+  }
+
+  .grid-container--crew > h1 {
+    justify-self: left;
+  }
+
+  .grid-container--crew > article {
+    align-self: end;
+  }
+
+  .grid-container--crew > .pagination-small {
+    justify-self: left;
+    align-self: end;
+    gap: 2.5rem;
   }
 }

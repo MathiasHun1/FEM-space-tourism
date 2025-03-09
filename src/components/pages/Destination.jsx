@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import moonIMG from '/images/destination/image-moon.png';
-import data from '../data.json';
+import data from '../../data.json';
 
 const Destination = () => {
   const [currentData, setCurrentData] = useState(null);
@@ -38,7 +37,7 @@ const Destination = () => {
             key={des.name}
             onClick={handleClick}
             data-destination={des.name}
-            className={`tablist text-preset-8 uppercase text-white ${
+            className={`text-preset-8 uppercase text-white ${
               activeDestination === des.name ? 'active' : ''
             }`}
           >
