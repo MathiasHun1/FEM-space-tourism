@@ -60,10 +60,18 @@
 
 .flow-gap-md {
   --flow-space: 3rem;
+
+  @include media.small-under {
+    --flow-space: 1.5rem;
+  }
 }
 
 .flow-gap-lg {
   --flow-space: 4rem;
+
+  @include media.small-under {
+    --flow-space: 2rem;
+  }
 }
 
 .sr-only {
@@ -385,11 +393,36 @@ button[data-nav-toggle='true'] {
   background-color: rgba($clr-white, 1);
 }
 
+.pagination-big > * {
+  cursor: pointer;
+  color: $clr-white;
+  border: 2px solid rgba($clr-white, 0.2);
+  background-color: transparent;
+  padding: 0;
+  width: 3rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+
+.pagination-big > *:hover,
+.pagination-big > *:focus {
+  background-color: rgba($clr-white, 0.5);
+}
+
+.pagination-big > *.active {
+  background-color: rgba($clr-white, 1);
+  color: $clr-dark;
+}
+
 //MEDIA
 /*--- medium screen + ---*/
 @include media.small-above {
   .mobile-nav-toggle {
     display: none;
+  }
+
+  .pagination-big > * {
+    width: 3.5rem;
   }
 }
 
@@ -439,5 +472,9 @@ button[data-nav-toggle='true'] {
 
   .pagination-small > * {
     width: 1rem;
+  }
+
+  .pagination-big > * {
+    width: 5rem;
   }
 }

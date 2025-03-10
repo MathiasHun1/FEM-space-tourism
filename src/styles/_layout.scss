@@ -105,28 +105,50 @@
 }
 
 // Technology
-.grid-container--technology {
-  grid-template-rows: 3rem;
-}
 
-.grid-container--technology > article {
-  align-self: start;
+.grid-container--technology {
+  grid-template-rows: 3rem min-content min-content;
 }
 
 .grid-container--technology h2 {
   opacity: 0.5;
 }
 
-.grid-container--technology .tecnology-image-wrapper {
-  position: relative;
-  overflow: visible;
-
-  & > img {
-    position: absolute;
-    top: 0;
-    width: 100vw;
-  }
+.grid-container--technology.wrapper {
+  padding-inline: 0;
 }
+
+.grid-container--technology .tecnology-image-wrapper {
+  max-width: unset;
+  width: 100%;
+  aspect-ratio: 2/ 1;
+  background-color: lightcoral;
+  position: relative;
+  margin-top: 4rem;
+}
+
+.tecnology-image-wrapper > picture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.tecnology-image-wrapper > picture > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.grid-container--technology > .pagination-big,
+.grid-container--technology > article {
+  align-self: start;
+  flex-direction: column;
+  align-items: center;
+}
+
+// MEDIA
 
 @include media.small-above {
   .grid-container {
@@ -141,6 +163,10 @@
   .grid-container--destination > img {
     grid-area: image;
   }
+}
+
+.grid-container--technology > article {
+  max-width: 80ch;
 }
 
 @include media.large-above {
@@ -229,5 +255,46 @@
     justify-self: left;
     align-self: end;
     gap: 2.5rem;
+  }
+
+  .grid-container--technology {
+    grid-template-rows: 6rem;
+    // grid-template-columns: minmax(2rem, auto) repeat(2, minmax(0, 40rem)) minmax(2rem, auto);
+    grid-template-columns: minmax(2rem, auto) repeat(2, minmax(0, 40rem)) minmax(
+        2rem,
+        auto
+      );
+    grid-template-areas:
+      '. title title title'
+      '. content content image'
+      '. content content image'
+      '. content content image';
+    column-gap: 5rem;
+  }
+
+  .grid-container--technology h1 {
+    grid-area: title;
+    justify-self: left;
+  }
+
+  .grid-container--technology > .tech-article {
+    grid-area: content;
+    align-self: center;
+    justify-self: left;
+    align-items: stretch;
+    margin: 0;
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .pagination-big {
+    flex-direction: column;
+    justify-content: space-around;
+    height: auto;
+  }
+
+  .grid-container--technology .tecnology-image-wrapper {
+    grid-area: image;
+    height: 100%;
   }
 }
