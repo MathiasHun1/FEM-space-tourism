@@ -19,7 +19,7 @@
 
 // Home
 .grid-container--home {
-  align-items: end;
+  align-items: start;
 }
 
 // Desttination
@@ -104,7 +104,35 @@
   grid-area: tabs;
 }
 
+// Technology
+.grid-container--technology {
+  grid-template-rows: 3rem;
+}
+
+.grid-container--technology > article {
+  align-self: start;
+}
+
+.grid-container--technology h2 {
+  opacity: 0.5;
+}
+
+.grid-container--technology .tecnology-image-wrapper {
+  position: relative;
+  overflow: visible;
+
+  & > img {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+  }
+}
+
 @include media.small-above {
+  .grid-container {
+    align-items: center;
+  }
+
   .destination-meta {
     flex-direction: row;
     justify-content: space-evenly;
@@ -118,6 +146,7 @@
 @include media.large-above {
   .grid-container {
     text-align: left;
+    align-items: end;
   }
 
   .grid-container--destination {

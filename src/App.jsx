@@ -6,6 +6,7 @@ import Navigation from './components/Navigation';
 import Home from './components/pages/Home';
 import Destination from './components/pages/Destination';
 import Crew from './components/pages/Crew';
+import Technology from './components/pages/Technology';
 
 const App = () => {
   const location = useLocation().pathname.slice(1);
@@ -40,7 +41,7 @@ const App = () => {
           <Route path="/home" element={<Home />} />
           <Route path="/destination" element={<Destination />} />
           <Route path="/crew" element={<Crew />} />
-          <Route path="/technology" element={<div>technology</div>} />
+          <Route path="/technology" element={<Technology />} />
 
           <Route path="*" element={<Navigate to="/home" replace />} />
         </Routes>

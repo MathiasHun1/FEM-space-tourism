@@ -330,24 +330,6 @@ button[data-nav-toggle='true'] {
   gap: var(--gap, 1rem);
 }
 
-.grid-container {
-  display: grid;
-  height: 100%;
-  max-height: 100rem;
-  place-items: center;
-  text-align: center;
-  padding-bottom: max(5rem, 15vh);
-}
-
-.grid-container > * {
-  max-width: 60ch;
-  height: min-content;
-}
-
-.grid-container--home {
-  align-items: center;
-}
-
 .logo {
   margin-block: 1.5rem;
   margin-inline: clamp(1.5rem, 5vw, 5rem);
