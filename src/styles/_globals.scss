@@ -456,6 +456,11 @@ button[data-nav-toggle='true'] {
     width: 1rem;
   }
 
+  .pagination-big {
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
   .pagination-big > * {
     width: 5rem;
   }
