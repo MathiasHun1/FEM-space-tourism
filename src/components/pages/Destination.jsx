@@ -25,11 +25,11 @@ const Destination = () => {
 
   return (
     <div className="grid-container grid-container--destination">
-      <h1 className="numbered-title text-preset-5 uppercase">
+      <h1 className="destination-title numbered-title text-preset-5 uppercase">
         <span>01</span> Pick your destination
       </h1>
 
-      <img src={currentData.images.png} alt="" />
+      <img className="destination-image" src={currentData.images.png} alt="" />
 
       <div className="destination-content d-flex gap-md">
         <div className="tablist underline-indicators d-flex gap-md text-white">

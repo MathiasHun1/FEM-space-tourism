@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router';
 
-const Navigation = ({ menuOpened }) => {
+const Navigation = ({ menuOpened, setMenuOpened }) => {
   return (
     <nav className="text-preset-8">
       <ul
@@ -9,7 +9,7 @@ const Navigation = ({ menuOpened }) => {
         data-nav-visible={menuOpened}
         aria-expanded={menuOpened}
       >
-        <li className="header-title">
+        <li className="header-title" onClick={() => setMenuOpened(false)}>
           <NavLink
             to="/home"
             className={({ isActive }) => (isActive ? ' active' : '')}
@@ -19,7 +19,7 @@ const Navigation = ({ menuOpened }) => {
           </NavLink>
         </li>
 
-        <li className="header-title">
+        <li className="header-title" onClick={() => setMenuOpened(false)}>
           <NavLink
             to="/destination"
             className={({ isActive }) => (isActive ? ' active' : '')}
@@ -29,7 +29,7 @@ const Navigation = ({ menuOpened }) => {
           </NavLink>
         </li>
 
-        <li className="header-title">
+        <li className="header-title" onClick={() => setMenuOpened(false)}>
           <NavLink
             to="/crew"
             className={({ isActive }) => (isActive ? ' active' : '')}
@@ -39,7 +39,7 @@ const Navigation = ({ menuOpened }) => {
           </NavLink>
         </li>
 
-        <li className="header-title">
+        <li className="header-title" onClick={() => setMenuOpened(false)}>
           <NavLink
             to="/technology"
             className={({ isActive }) => (isActive ? 'active' : '')}

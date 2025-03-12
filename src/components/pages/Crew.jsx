@@ -21,12 +21,12 @@ const Crew = () => {
 
   return (
     <div className="grid-container grid-container--crew wrapper">
-      <h1 className="numbered-title text-preset-5 uppercase">
+      <h1 className="crew-title numbered-title text-preset-5 uppercase">
         <span>02</span> Meet your crew
       </h1>
 
-      <article className="article-crew">
-        <header className="subheader-crew">
+      <article className="crew-article">
+        <header className="crew-subheader">
           <h2 className="text-preset-4 uppercase">{currentData.role}</h2>
           <p className="text-preset-3 uppercase">{currentData.name}</p>
         </header>

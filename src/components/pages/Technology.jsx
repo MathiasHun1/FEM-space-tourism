@@ -1,5 +1,3 @@
-import image from '/images/technology/image-launch-vehicle-landscape.jpg';
-
 import data from '../../data.json';
 import { useState } from 'react';
 
@@ -23,11 +21,11 @@ const Technology = () => {
 
       <picture className="tecnology-image-wrapper">
         <source
-          srcset={currentData.images.landscape}
+          srcSet={currentData.images.landscape}
           media="(max-width: 80rem)"
         />
         <source
-          srcset={currentData.images.portrait}
+          srcSet={currentData.images.portrait}
           media="(min-width: 80rem)"
         />
 
