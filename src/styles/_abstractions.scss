@@ -23,6 +23,7 @@ $ff-sans-normal: 'Barlow ', sans-serif;
   --fs-200: calc(14rem / 16);
 
   @include media.large-under {
+    --fs-900: calc(120rem / 16);
     --fs-800: calc(80rem / 16);
     --fs-700: calc(40rem / 16);
     --fs-600: calc(24rem / 16);

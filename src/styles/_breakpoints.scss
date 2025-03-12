@@ -1,6 +1,6 @@
 // device size
 $breakpoint-small: 45rem;
-$breakpoint-large: 70rem;
+$breakpoint-large: 80rem;
 
 @mixin small-above {
   @media (min-width: $breakpoint-small) {

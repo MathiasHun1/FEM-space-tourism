@@ -20,19 +20,17 @@ const Crew = () => {
   }
 
   return (
-    <div className="grid-container grid-container--crew wrapper flow flow-gap-lg">
+    <div className="grid-container grid-container--crew wrapper">
       <h1 className="numbered-title text-preset-5 uppercase">
         <span>02</span> Meet your crew
       </h1>
 
-      <article className="">
-        <div className="flow flow-gap-sm">
-          <header className="">
-            <h2 className="text-preset-4 uppercase">{currentData.role}</h2>
-            <p className="text-preset-3 uppercase nowrap">{currentData.name}</p>
-          </header>
-          <p className="text-preset-9 text-light">{currentData.bio}</p>
-        </div>
+      <article className="article-crew">
+        <header className="subheader-crew">
+          <h2 className="text-preset-4 uppercase">{currentData.role}</h2>
+          <p className="text-preset-3 uppercase">{currentData.name}</p>
+        </header>
+        <p className="text-preset-9 text-light">{currentData.bio}</p>
       </article>
 
       <div className="pagination-small d-flex gap-sm">

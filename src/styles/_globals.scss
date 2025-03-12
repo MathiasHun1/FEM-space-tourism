@@ -7,7 +7,6 @@
 
 // general utility calsses
 .wrapper {
-  padding-inline: 1rem;
   width: clamp(20rem, 100%, 100rem);
   margin-inline: auto;
 }
@@ -155,7 +154,7 @@
 
 .text-preset-1 {
   font-family: $ff-serif;
-  font-size: clamp(calc(80rem / 16), 8.5vw, 144rem / 16);
+  font-size: var(--fs-900);
   letter-spacing: 0;
 }
 
@@ -334,7 +333,7 @@ button[data-nav-toggle='true'] {
 }
 
 .tablist {
-  justify-content: space-evenly;
+  width: min-content;
   gap: var(--gap, 1rem);
 }
 
@@ -354,7 +353,7 @@ button[data-nav-toggle='true'] {
   border: none;
   position: absolute;
   right: 2rem;
-  top: 4rem;
+  top: 2.5rem;
 }
 
 .mobile-nav-toggle:hover {
@@ -372,6 +371,10 @@ button[data-nav-toggle='true'] {
 
 .skip-to-content:focus {
   transform: translateY(0);
+}
+
+.pagination-small {
+  height: min-content;
 }
 
 .pagination-small > * {
@@ -434,27 +437,6 @@ button[data-nav-toggle='true'] {
 @include media.large-above {
   .dot-indicator {
     width: 1rem;
-  }
-
-  .grid-container {
-    display: grid;
-    grid-template-columns: minmax(2rem, auto) repeat(2, minmax(0, 40rem)) minmax(
-        2rem,
-        auto
-      );
-    text-align: start;
-  }
-
-  .grid-container > *:first-child {
-    grid-column: 2;
-  }
-
-  .grid-container > *:last-child {
-    grid-column: 3;
-  }
-
-  .grid-container--home {
-    align-items: end;
   }
 
   .logo::after {

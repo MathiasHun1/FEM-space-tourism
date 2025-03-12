@@ -2,8 +2,8 @@ import { NavLink } from 'react-router';
 
 const Home = () => {
   return (
-    <div className="grid-container grid-container--home wrapper">
-      <div>
+    <div className="grid-container grid-container--home">
+      <div className="home-content">
         <h1 className="text-preset-5 uppercase">
           So, you want to travel to{' '}
           <span className="text-preset-1 text-white d-block">Space</span>
@@ -15,7 +15,7 @@ const Home = () => {
           experience!
         </p>
       </div>
-      <div>
+      <div className="explore-btn">
         <NavLink
           to={'/destination'}
           className="button-big text-preset-4 text-dark"

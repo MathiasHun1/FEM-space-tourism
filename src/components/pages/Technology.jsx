@@ -16,7 +16,7 @@ const Technology = () => {
   };
 
   return (
-    <div className="grid-container grid-container--technology wrapper flow flow-gap-md">
+    <div className="grid-container--technology wrapper">
       <h1 className="numbered-title text-preset-5 uppercase">
         <span>03</span>Space launch 101
       </h1>
@@ -32,7 +32,7 @@ const Technology = () => {
         </picture>
       </div>
 
-      <article className="tech-article wrapper d-flex flow">
+      <article className="tech-article wrapper d-flex">
         <div className="pagination-big d-flex gap-sm">
           {data.technology.map((tech) => (
             <button
@@ -46,8 +46,8 @@ const Technology = () => {
             </button>
           ))}
         </div>
-        <div className="flow flow-gap-sm">
-          <header className="flow flow-gap-sm">
+        <div className="">
+          <header className="">
             <h2 className="text-preset-4 uppercase">The terminology...</h2>
             <p className="text-preset-3 uppercase nowrap">{currentData.name}</p>
           </header>

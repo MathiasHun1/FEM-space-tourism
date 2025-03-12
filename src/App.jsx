@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Routes, Route, Navigate, useLocation } from 'react-router';
 import logoSVG from '/images/shared/logo.svg';
 
@@ -18,6 +18,7 @@ const App = () => {
       <a href="#main" className="skip-to-content">
         Skip to content
       </a>
+
       <header className="primary-header d-flex gap-sm">
         <div className="logo">
           <img src={logoSVG} alt="" />
@@ -42,7 +43,6 @@ const App = () => {
           <Route path="/destination" element={<Destination />} />
           <Route path="/crew" element={<Crew />} />
           <Route path="/technology" element={<Technology />} />
-
           <Route path="*" element={<Navigate to="/home" replace />} />
         </Routes>
       </main>

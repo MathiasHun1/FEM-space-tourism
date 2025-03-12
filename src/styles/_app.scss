@@ -17,7 +17,7 @@ body,
 }
 
 body {
-  font-weight: 300;
+  font-weight: 500;
 }
 
 .app {
@@ -31,7 +31,6 @@ body {
 
 .primary-header {
   height: min-content;
-  padding-block: 2rem;
   justify-content: space-between;
   position: relative;
 }
@@ -66,6 +65,46 @@ body {
 
 .primary-nav[data-nav-visible='true'] {
   transform: translateX(0);
+}
+
+// Home
+.home-content {
+  margin-top: clamp(2rem, 10vw, 5rem);
+}
+
+.home-content > h1 span {
+  margin-top: 1rem;
+}
+
+.home-content > p {
+  margin-top: 1.5rem;
+}
+
+// Destination
+.destination-content {
+  flex-direction: column;
+  align-items: center;
+}
+
+.destination-info {
+  flex-direction: column;
+  align-items: center;
+}
+
+.destination-meta {
+  width: fit-content;
+}
+
+.destination-info > hr {
+  width: 100%;
+  height: 0px;
+  border: 1px solid rgba($clr-white, 0.3);
+}
+
+@include media.large-above {
+  .destination-info {
+    align-items: start;
+  }
 }
 
 @include media.small-above {
