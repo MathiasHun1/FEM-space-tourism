@@ -33,6 +33,7 @@
 
 @include media.small-above {
   .grid-container--home {
+    grid-template-rows: unset;
     grid-template-columns: 8rem 1fr 8rem;
     padding-bottom: max(5rem, 15vh);
   }
