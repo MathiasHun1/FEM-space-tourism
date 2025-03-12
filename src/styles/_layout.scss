@@ -208,7 +208,6 @@
 
   .grid-container--crew > .crew-image-wrapper {
     width: 100%;
-    align-self: center;
   }
 }
 
@@ -233,6 +232,10 @@
   .grid-container .pagination-small {
     justify-self: left;
     align-self: end;
+  }
+
+  .grid-container--crew > .crew-image-wrapper {
+    align-self: center;
   }
 }
 
@@ -284,154 +287,3 @@
     align-self: start;
   }
 }
-
-// MEDIA
-
-// @include media.small-above {
-//   .grid-container {
-//     align-items: center;
-//   }
-
-//   .destination-meta {
-//     flex-direction: row;
-//     justify-content: space-evenly;
-//   }
-
-//   .grid-container--destination > img {
-//     grid-area: image;
-//   }
-// }
-
-// .grid-container--technology > article {
-//   max-width: 80ch;
-// }
-
-// @include media.large-above {
-//   .grid-container {
-//     text-align: left;
-//     align-items: end;
-//   }
-
-//   .grid-container--destination {
-//     grid-template-rows: 6rem 10rem;
-//     grid-template-areas:
-//       '. title title .'
-//       '. image tabs .'
-//       '. image content .';
-
-//     column-gap: 5rem;
-//     text-align: start;
-//   }
-
-//   .grid-container--destination > h1 {
-//     justify-self: left;
-//   }
-
-//   .grid-container--destination > img {
-//     justify-self: right;
-//     align-self: center;
-//     max-width: revert;
-//     width: 90%;
-//   }
-
-//   .grid-container--destination > .tablist {
-//     justify-self: left;
-//     align-self: end;
-//   }
-
-//   .grid-container--destination > .destination-info {
-//     justify-self: left;
-//     align-self: start;
-//     padding: 0;
-//   }
-
-//   .destination-meta {
-//     justify-content: start;
-//     gap: 5rem;
-//   }
-
-//   .grid-container--crew {
-//     grid-template-rows: 6rem;
-//     grid-template-areas:
-//       '. title title .'
-//       '. content image .'
-//       '. tabs image .';
-//     column-gap: 5rem;
-//     padding-bottom: 5rem;
-//     text-align: left;
-//   }
-
-//   .grid-container--crew > * {
-//     grid-template-areas:
-//       '. title title .'
-//       '. content image .'
-//       '. tabs image .';
-
-//     text-align: left;
-//     max-width: revert;
-//   }
-
-//   .grid-container--crew > .crew-image-wrapper {
-//     justify-self: left;
-//     align-self: flex-end;
-//     width: 600px;
-//     height: 700px;
-//     position: relative;
-//     display: block;
-//   }
-
-//   .grid-container--crew > h1 {
-//     justify-self: left;
-//   }
-
-//   .grid-container--crew > article {
-//     align-self: end;
-//   }
-
-//   .grid-container--crew > .pagination-small {
-//     justify-self: left;
-//     align-self: end;
-//     gap: 2.5rem;
-//   }
-
-//   .grid-container--technology {
-//     grid-template-rows: 6rem;
-
-//     grid-template-columns: minmax(2rem, auto) repeat(2, minmax(0, 40rem)) minmax(
-//         2rem,
-//         auto
-//       );
-//     grid-template-areas:
-//       '. title title title'
-//       '. content content image'
-//       '. content content image'
-//       '. content content image';
-//     column-gap: 5rem;
-//   }
-
-//   .grid-container--technology h1 {
-//     grid-area: title;
-//     justify-self: left;
-//   }
-
-//   .grid-container--technology > .tech-article {
-//     grid-area: content;
-//     align-self: center;
-//     justify-self: left;
-//     align-items: stretch;
-//     margin: 0;
-//     flex-direction: row;
-//     gap: 2rem;
-//   }
-
-//   .pagination-big {
-//     flex-direction: column;
-//     justify-content: space-around;
-//     height: auto;
-//   }
-
-//   .grid-container--technology .tecnology-image-wrapper {
-//     grid-area: image;
-//     height: 100%;
-//   }
-// }
