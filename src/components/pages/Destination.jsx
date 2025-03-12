@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
+import { motion } from 'motion/react';
 
 import data from '../../data.json';
 
@@ -29,7 +30,17 @@ const Destination = () => {
         <span>01</span> Pick your destination
       </h1>
 
-      <img className="destination-image" src={currentData.images.png} alt="" />
+      <motion.img
+        className="destination-image"
+        src={currentData.images.png}
+        alt=""
+        key={currentData.name}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{
+          duration: 0.6,
+        }}
+      />
 
       <div className="destination-content d-flex gap-md">
         <div className="tablist underline-indicators d-flex gap-md text-white">
@@ -46,7 +57,15 @@ const Destination = () => {
             </button>
           ))}
         </div>
-        <article className="destination-info d-flex">
+        <motion.article
+          className="destination-info d-flex"
+          key={currentData.name}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            duration: 0.6,
+          }}
+        >
           <h2 className="text-preset-2 uppercase">{currentData.name}</h2>
           <p className="text-preset-9 text-light">{currentData.description}</p>
 
@@ -67,7 +86,7 @@ const Destination = () => {
               <p className="text-preset-6 uppercase">{currentData.travel}</p>
             </div>
           </div>
-        </article>
+        </motion.article>
       </div>
     </div>
   );

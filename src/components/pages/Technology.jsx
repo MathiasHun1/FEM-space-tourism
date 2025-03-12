@@ -1,5 +1,6 @@
 import data from '../../data.json';
 import { useState } from 'react';
+import { motion } from 'motion/react';
 
 const Technology = () => {
   const [currentData, setCurrentData] = useState(data.technology[0]);
@@ -19,7 +20,15 @@ const Technology = () => {
         <span>03</span>Space launch 101
       </h1>
 
-      <picture className="tecnology-image-wrapper">
+      <motion.picture
+        className="tecnology-image-wrapper"
+        key={currentData.name}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{
+          duration: 0.6,
+        }}
+      >
         <source
           srcSet={currentData.images.landscape}
           media="(max-width: 80rem)"
@@ -30,9 +39,17 @@ const Technology = () => {
         />
 
         <img src={currentData.images.landscape} alt="" />
-      </picture>
+      </motion.picture>
 
-      <article className="tech-article d-flex">
+      <article
+        className="tech-article d-flex"
+        key={currentData.description}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{
+          duration: 0.6,
+        }}
+      >
         <div className="pagination-big d-flex gap-sm">
           {data.technology.map((tech) => (
             <button
@@ -46,7 +63,15 @@ const Technology = () => {
             </button>
           ))}
         </div>
-        <div className="">
+        <motion.div
+          className=""
+          key={currentData.description}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            duration: 0.6,
+          }}
+        >
           <header className="">
             <h2 className="text-preset-4 uppercase">The terminology...</h2>
             <p className="text-preset-3 uppercase ">{currentData.name}</p>
@@ -54,7 +79,7 @@ const Technology = () => {
           <p className="tech-description text-preset-9 text-light">
             {currentData.description}
           </p>
-        </div>
+        </motion.div>
       </article>
     </div>
   );

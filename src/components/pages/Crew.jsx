@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-
+import { motion } from 'motion/react';
 import data from '../../data.json';
-import image from '/images/crew/image-douglas-hurley.png';
 
 const Crew = () => {
   const [currentData, setCurrentData] = useState(data.crew[0]);
@@ -25,13 +24,21 @@ const Crew = () => {
         <span>02</span> Meet your crew
       </h1>
 
-      <article className="crew-article">
+      <motion.article
+        className="crew-article"
+        key={currentData.name}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{
+          duration: 0.6,
+        }}
+      >
         <header className="crew-subheader">
           <h2 className="text-preset-4 uppercase">{currentData.role}</h2>
           <p className="text-preset-3 uppercase">{currentData.name}</p>
         </header>
         <p className="text-preset-9 text-light">{currentData.bio}</p>
-      </article>
+      </motion.article>
 
       <div className="pagination-small d-flex gap-sm">
         {data.crew.map((member) => (
@@ -46,9 +53,17 @@ const Crew = () => {
         ))}
       </div>
 
-      <div className="crew-image-wrapper">
+      <motion.div
+        className="crew-image-wrapper"
+        key={currentData.role}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{
+          duration: 0.6,
+        }}
+      >
         <img src={currentData.images.png} alt="" />
-      </div>
+      </motion.div>
     </div>
   );
 };
